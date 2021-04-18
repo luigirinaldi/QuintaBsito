@@ -1,0 +1,58 @@
+/* orange colour #FE8150 */
+
+
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'DejaVu Sans Mono', monospace;
+
+    color: whitesmoke;
+}
+
+.background{
+    background-color: #131313;
+}
+
+.centercontainer{    
+    width: 60%;
+    height:fit-content;
+    min-height: 100%;
+    padding: 2em 4% 6em;
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
+    text-align: left;
+    background-color: #575151;
+    
+    
+}
+
+.player-container{
+    position: fixed;
+    width: 68%;
+    height: 5em;
+    bottom: 0;
+    padding: 0 16% 0;
+    background-color: #2B2B2B;
+}
+
+.header{
+    display: grid;
+    column-gap: 1em;
+    grid-template-columns: 2em 1fr;
+    margin-bottom: 2em;
+}
+
+.backBttn{    
+    grid-column: 1 / 2;
+    fill:whitesmoke;
+    width:2em;
+    height:2em;
+}
+
+.title{    
+    grid-column: 2 / 3;
+    font-size: x-large;
+    font-weight: bold;
+}

@@ -1,0 +1,86 @@
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.title{
+    font-size: xx-large;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+
+.listElement{
+    display: grid;    
+    grid-template-columns: 1fr 1fr;
+    width: 96%;
+    padding: 1% 2% 1%;
+    margin-bottom: 1rem;
+    max-height: 10em;
+    color: black;
+    background-color: #FE8150;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+    border-radius: 0.5em;
+    overflow-wrap: normal;
+    overflow: hidden;
+}
+
+.name{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    text-align: left;
+    font-size: x-large;
+    font-weight: bold;
+    margin-bottom: 1%;
+}
+
+.details{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    text-align: right;
+}
+
+.date{
+    font-size: 0.7rem;
+    font-style: italic;
+}
+
+.text{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    text-align: left;
+    font-size: small;
+}
+
+.profText{
+    font-size: 1.5em;
+    font-weight: bolder;
+}
+
+.subjList{
+    display: grid;  
+    grid-template-columns: 1;
+    grid-template-rows: 1fr 4em 1fr;
+    width: 96%;
+    padding: 1% 2% 1%;
+    margin-bottom: 1rem;
+    height: 8em;
+    color: black;
+    background-color: #c8ff00;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+    border-radius: 1em;
+    overflow-wrap: normal;
+    overflow: hidden;
+}
+
+.subjTitle{
+    grid-row: 2/3;
+    text-align: center;
+    font-size: xxx-large;
+    font-weight: bold;
+}

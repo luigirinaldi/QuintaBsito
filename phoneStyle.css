@@ -1,0 +1,52 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'DejaVu Sans Mono', monospace;
+    color: whitesmoke;
+}
+
+.background{
+    background-color: #131313;
+}
+
+.centercontainer{    
+    width: 96%;
+    min-height: 100%;
+    height: fit-content;
+    padding:1rem 2% 6em;
+    text-align: left;
+    background-color: #575151;
+    
+    color: whitesmoke;
+}
+
+.player-container{
+    position: fixed;
+    width: 96%;
+    height: 5em;
+    padding-left:2%;
+    padding-right: 2%;
+    bottom: 0;
+    background-color: #2B2B2B;
+}
+
+.header{
+    display: grid;
+    column-gap: 1em;
+    grid-template-columns: 2em 1fr;
+    margin-bottom: 2em;
+}
+
+.backBttn{    
+    grid-column: 1 / 2;
+    fill:whitesmoke;
+    width:2em;
+    height:2em;
+}
+
+.title{    
+    grid-column: 2 / 3;
+    font-size: x-large;
+    font-weight: bold;
+}
+
