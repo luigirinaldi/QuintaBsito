@@ -36,23 +36,3 @@ html, body {
     padding: 0 16% 0;
     background-color: #2B2B2B;
 }
-
-.header{
-    display: grid;
-    column-gap: 1em;
-    grid-template-columns: 2em 1fr;
-    margin-bottom: 2em;
-}
-
-.backBttn{    
-    grid-column: 1 / 2;
-    fill:whitesmoke;
-    width:2em;
-    height:2em;
-}
-
-.title{    
-    grid-column: 2 / 3;
-    font-size: x-large;
-    font-weight: bold;
-}

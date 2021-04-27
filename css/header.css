@@ -1,0 +1,28 @@
+.header{
+    display: grid;
+    column-gap: 1em;
+    grid-template-columns: 2em 1fr 2em;
+    margin-bottom: 2em;
+}
+
+.backBttn{    
+    grid-column: 1 / 2;
+    fill:whitesmoke;
+    width:2em;
+    height:2em;
+}
+
+.header-title{    
+    grid-column: 2 / 3;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.uploadBttn{
+    /*grid-column: 3 / 4;*/
+    fill:whitesmoke;
+    width:2em;
+    height:2em;
+    margin-left: auto;
+    margin-bottom: 2em;
+}

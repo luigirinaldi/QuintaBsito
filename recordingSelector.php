@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome</title>
-    <link rel="stylesheet" media="screen and (max-width:800px)" href="phoneStyle.css">
-    <link rel="stylesheet" media="screen and (min-width:800px)" href="desktopStyle.css">
-    <link rel="stylesheet" href="home.css">
+<?php include_once './header.php' ?>
+    <link rel="stylesheet" href="./css/home.css">
 </head>
 <body class="background">
     <div class="centercontainer">
@@ -16,7 +9,7 @@
                     <?php include("Icons/backArrow1.svg") ?>
                 </div>
             </a>
-            <div class="title">
+            <div class="header-title">
                 <?php
                 echo $_GET['subjectName'];                
                 ?>

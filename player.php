@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recordings Player</title>
-    <link rel="stylesheet" media="screen and (max-width:800px)" href="phoneStyle.css">
-    <link rel="stylesheet" media="screen and (min-width:800px)" href="desktopStyle.css">
-    <link rel="stylesheet" href="player.css">
+<?php include_once './header.php' ?>
+    <link rel="stylesheet" href="./css/player.css">
 </head>
 <body class="background">
     <div class="centercontainer">       
@@ -25,7 +18,7 @@
                     <?php include("Icons/backArrow1.svg") ?>
                 </div>
             <?php echo "</a>"; ?>
-            <div class="title">
+            <div class="header-title">
                 <?php
                 echo $recording['name'];                
                 ?>
@@ -158,6 +151,6 @@
     <script>
         var audioRecordingPath = <?php /*replace initial bit of path to make it public*/echo json_encode(str_replace("/var/www/quintaB.xyz/public_html","",$recording['mp3_path']), JSON_HEX_TAG); ?>; // Don't forget the extra semicolon!
     </script>
-    <script src="main.js"></script>
+    <script src="./js/main.js"></script>
 </body>
 </html>
