@@ -57,12 +57,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["uploadSubmit"])){
                 if(isset($_POST["track_name"])){
                     $track_name = $_POST["track_name"];
                     $is_silenced = isset($_POST["is_silenced"]);
-                    $is_converted = $is_transcribed;
+                    
                     //do stuff with files 
                     $new_track_dir_name = rand(1000,10000)."_".$track_date."_".$track_subject."_".$track_name;
                     $db = new Database;
                     $db_conn = $db->getConnection();
-                    $sql_insert = "INSERT INTO recordings (name,path,subj_ID,date,is_converted,is_transcribed,is_silenced,mp3_path,silenced_path,transcript_path,transcript_timestamps_new_path$transcript_timestamps_new_path) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
+                    $sql_insert = "INSERT INTO recordings (name,path,subj_ID,date,is_converted,is_transcribed,is_silenced,mp3_path,silenced_path,transcript_path,transcript_timestamps_path) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
                     $stmt = $db_conn->prepare($sql_insert);
                     $track_path = $uplaods_dest_folder."/".$new_track_dir_name;
                     //make new track directory
@@ -99,11 +99,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["uploadSubmit"])){
                             shell_exec($rm_command);
                             die("timestamp transcript file upload failed :( <br>");
                         }
+                        $is_transcribed = 1;
+                    }else{
+                        $is_transcribed = 0;
                     }
                     $silenced_path = null;
                     if($is_silenced){
                         $silenced_path = $mp3_new_path;
+                        $is_silenced = 1;
+                    } else{
+                        $is_silenced = 0;
                     }
+                    $is_converted = $is_transcribed;
                     $insert_track_info = array(
                         $track_name,
                         $track_path,
@@ -117,14 +124,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["uploadSubmit"])){
                         $transcript_new_path,
                         $transcript_timestamps_new_path
                     );
-                    $stmt->bind_param("sssssssssss",$insert_track_info);
+                    //$stmt->bind_param("sssssssssss",$insert_track_info);
                     print_r($stmt);
                     //everything has worked so db can be updated 
-                    if ($stmt->execute()){
+                    if ($stmt->execute($insert_track_info)){
                         echo "data successfully uploaded to DB! <br> Go ahead and enjoy your recording! <br>"; 
                     } else{
                         $rm_command = "rm -r ".$track_path;
                         shell_exec($rm_command);
+                        echo "<br>";
+                        print_r($stmt->errorInfo());
+                        echo "<br>";
                         die("data upload to DB failed :( <br> please retry <br>");
                     }
 

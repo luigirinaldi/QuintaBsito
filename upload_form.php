@@ -34,7 +34,7 @@
             $result = $db_conn->query($query);                 
             while ($row = $result->fetch(PDO::FETCH_ASSOC)){
                 extract($row);                
-                echo "<option values=".$ID.">".$name."</option>";                        
+                echo "<option value=".$ID.">".$name."</option>";                        
             }              
             ?>    
         </select><br>
