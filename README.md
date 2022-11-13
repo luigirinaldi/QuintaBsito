@@ -1,2 +1,3 @@
 # QuintaBsito
-Sito per le registrazioni della quinta B, sarà utile per la maturità si spera
+
+Website to store and display recordings of high school lessons during lockdown. 
